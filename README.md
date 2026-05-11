@@ -143,9 +143,9 @@ where σ² = N0/2 = 1 / (2 × bits_per_symbol × 10^(SNR/10))
 
 ## Results
 
-![BER vs SNR and Shannon Capacity](results/ber_plot.png)
-
 ### BER vs SNR
+
+![BER vs SNR and Shannon Capacity](result/result2.jpeg)
 
 | SNR (dB) | BER Simulated | BER Theoretical |
 |:---:|:---:|:---:|
@@ -162,6 +162,8 @@ Key observations:
 - At 10 dB and above, the channel is essentially error-free for QPSK
 
 ### Shannon Capacity
+
+![BER vs SNR and Shannon Capacity](result/result1.jpeg)
 
 | SNR (dB) | Capacity (kbps) |
 |:---:|:---:|
@@ -260,12 +262,10 @@ The script will:
 
 ## Concepts Covered
 
-This project directly applies the following digital communications topics:
 
-| Topic | Where applied |
+| Topic | application |
 |---|---|
 | Gaussian noise and AWGN channel model | Channel simulation block |
-| Nyquist sampling theorem and PCM | Signal representation |
 | QPSK modulation and signal-space representation | Modulator block |
 | Gray coding | Bit-to-symbol mapping |
 | Coherent detection and minimum distance decision | Demodulator block |
@@ -283,9 +283,3 @@ This project directly applies the following digital communications topics:
 
 ---
 
-## Author
-
-**[Your Name]**  
-B.Tech Electronics & Communication Engineering  
-[Institution Name] — [Year]  
-[LinkedIn](https://linkedin.com/in/your-profile) · [GitHub](https://github.com/your-username)
