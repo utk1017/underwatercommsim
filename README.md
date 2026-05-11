@@ -1,21 +1,7 @@
-# 📡 Underwater Acoustic Communication System
+#  Underwater Acoustic Communication System
 
-> A Python simulation of a digital underwater communication system implementing QPSK modulation over an AWGN channel — built as part of a B.Tech ECE Digital Communications course project.
+> A Python simulation of a digital underwater communication system implementing QPSK modulation over an AWGN channel.
 
----
-
-## 📋 Table of Contents
-
-- [Overview](#overview)
-- [Background](#background)
-- [System Architecture](#system-architecture)
-- [Theory](#theory)
-- [Results](#results)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [Sample Output](#sample-output)
-- [Concepts Covered](#concepts-covered)
-- [References](#references)
 
 ---
 
