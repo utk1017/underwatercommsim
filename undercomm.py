@@ -53,7 +53,7 @@ def ber_theory_qpsk(snr_db):
 
 def shannon_capacity(snr_db, bandwidth):
     snr_linear = 10 ** (snr_db / 10)
-    return bandwidth * np.log2(1 + snr_linear) / 1000   # kbps
+    return bandwidth * np.log2(1 + snr_linear) / 1000   
 
 
 ber_simulated = np.zeros(len(SNR_DB))
@@ -67,13 +67,11 @@ tx_bits = np.random.randint(0, 2, NUM_BITS)
 tx_syms = qpsk_modulate(tx_bits)
 
 for i, snr in enumerate(SNR_DB):
-    # pass through AWGN channel
+   
     rx_syms = awgn_channel(tx_syms, snr)
 
-    # demodulate
     rx_bits = qpsk_demodulate(rx_syms)
 
-    # count bit errors (compare only the bits we have symbols for)
     n = min(len(tx_bits), len(rx_bits))
     errors = np.sum(tx_bits[:n] != rx_bits[:n])
     ber_simulated[i] = errors / n
@@ -125,8 +123,7 @@ print(f"  Total bits      : {NUM_BITS:,}")
 print(f"  Channel         : AWGN")
 print(f"  Bandwidth       : {BANDWIDTH} Hz")
 idx10 = np.where(SNR_DB == 10)[0][0]
-print(f"  BER @ 10 dB     : {ber_simulated[idx10]:.5f} (sim) "
-      f"| {ber_theoretical[idx10]:.5f} (theory)")
+print(f"  BER @ 10 dB     : {ber_simulated[idx10]:.5f} (sim) "f"| {ber_theoretical[idx10]:.5f} (theory)")
 print(f"  Capacity @ 10dB : {capacity_kbps[idx10]:.2f} kbps")
 print(f"  Plot saved      : underwater_comm_results.png")
 print("=" * 52)
