@@ -7,7 +7,7 @@
 
 ## Overview
 
-Underwater communication is fundamentally different from terrestrial wireless communication. Radio waves attenuate extremely rapidly in seawater due to its high electrical conductivity, making RF-based systems impractical beyond a few centimetres. **Acoustic waves** are therefore the primary medium for underwater data transmission — used in ocean monitoring, submarine navigation, autonomous underwater vehicles (AUVs), and offshore infrastructure.
+Underwater communication is fundamentally different from terrestrial wireless communication. Radio waves attenuate extremely rapidly in seawater due to its high electrical conductivity, making RF-based systems impractical beyond a few centimetres. **Acoustic waves** are therefore the primary medium for underwater data transmission ,used in ocean monitoring, submarine navigation, autonomous underwater vehicles (AUVs), and offshore infrastructure.
 
 This project simulates a simplified underwater acoustic communication link using core digital communications principles:
 
@@ -16,13 +16,12 @@ This project simulates a simplified underwater acoustic communication link using
 - **BER vs SNR analysis** validated against the theoretical Q-function bound
 - **Shannon capacity** to establish the information-theoretic upper limit
 
-The simulation is written entirely in Python using NumPy, Matplotlib, and SciPy — no external communications toolboxes required.
+The simulation is written entirely in Python using NumPy, Matplotlib, and SciPy.
 
 ---
 
 ## Background
 
-### Why acoustic and not radio?
 
 | Property | Radio (RF) | Acoustic |
 |---|---|---|
@@ -35,12 +34,12 @@ Acoustic communication is the only practical long-range solution underwater, whi
 
 ### Key challenges of the underwater acoustic channel
 
-- **Limited bandwidth** — typically only a few kHz usable
-- **High ambient noise** — from shipping, marine life, wind-driven surface waves
-- **Multipath propagation** — reflections from the surface and seabed cause ISI
-- **Doppler spreading** — caused by transmitter/receiver motion and water currents
+- **Limited bandwidth** : typically only a few kHz usable
+- **High ambient noise** : from shipping, marine life, wind-driven surface waves
+- **Multipath propagation** : reflections from the surface and seabed cause ISI
+- **Doppler spreading** : caused by transmitter/receiver motion and water currents
 
-This simulation models the channel as AWGN — the standard first-order approximation used to establish baseline performance before adding multipath and fading effects.
+This simulation models the channel as AWGN , the standard first-order approximation used to establish baseline performance before adding multipath and fading effects.
 
 ---
 
