@@ -89,7 +89,7 @@ Models the underwater ambient noise as complex additive Gaussian noise. For each
 Both in-phase (I) and quadrature (Q) noise components are generated independently from N(0, σ²/2).
 
 **QPSK Demodulator (Coherent Detection)**  
-Performs minimum Euclidean distance detection. Since QPSK points are separated by the I and Q axes, coherent detection reduces to two independent binary decisions — the sign of the received I component and the sign of the received Q component.
+Performs minimum Euclidean distance detection. Since QPSK points are separated by the I and Q axes, coherent detection reduces to two independent binary decisions ,the sign of the received I component and the sign of the received Q component.
 
 **BER Calculator**  
 Compares the transmitted bit stream against the received bit stream and computes the fraction of incorrectly decoded bits.
@@ -127,7 +127,7 @@ where:
 - `B` = signal bandwidth in Hz
 - `SNR` = signal-to-noise ratio (linear scale)
 
-For this simulation, `B = 4000 Hz` (a typical usable underwater acoustic band). At `SNR = 10 dB`, this gives `C ≈ 13.84 kbps` — the theoretical ceiling no system can exceed at that SNR.
+For this simulation, `B = 4000 Hz` (a typical usable underwater acoustic band). At `SNR = 10 dB`, this gives `C ≈ 13.84 kbps` , the theoretical ceiling no system can exceed at that SNR.
 
 ### Noise Model
 
@@ -180,14 +180,12 @@ The system operates comfortably below the Shannon limit, confirming that reliabl
 ## Project Structure
 
 ```
-underwater-comm-simulation/
+underwatercommsim/
 │
-├── simulation.py          # main simulation — run this
-├── requirements.txt       # pip dependencies (3 packages)
-├── README.md              # this file
-│
-└── results/
-    └── ber_plot.png       # output plot (auto-saved on run)
+├── result          
+├── underwatercommsim.py       
+├── README.md              
+
 ```
 
 ---
@@ -203,60 +201,24 @@ underwater-comm-simulation/
 
 ```bash
 # 1. clone the repository
-git clone https://github.com/your-username/underwater-comm-simulation.git
-cd underwater-comm-simulation
-
-# 2. install dependencies
-pip install -r requirements.txt
+git clone https://github.com/utk1017/underwatercommsim.git
+cd underwatercommsim
 ```
+
+
 
 ### Run
 
 ```bash
-python simulation.py
+python undercomm.py
 ```
-
-The script will:
-1. Print a BER comparison table to the terminal
-2. Display two plots (BER vs SNR and Shannon Capacity vs SNR)
-3. Save the plot automatically to `results/ber_plot.png`
 
 ---
 
 ## Sample Output
 
-```
-====================================================
-  Underwater Acoustic Communication Simulation
-====================================================
-  Modulation  : QPSK  (2 bits / symbol)
-  Bits        : 100,000
-  SNR range   : 0 – 20 dB
-  Bandwidth   : 4000 Hz
-====================================================
+![BER vs SNR and Shannon Capacity](result/result3.jpeg)
 
-  SNR (dB)    BER (simulated)    BER (theory)
-----------------------------------------------
-         0            0.07969         0.07865
-         2            0.03778         0.03751
-         4            0.01287         0.01250
-         6            0.00219         0.00239
-         8            0.00019         0.00019
-        10            0.00001         0.00000
-        12            0.00000         0.00000
-
-====================================================
-  SIMULATION SUMMARY
-====================================================
-  Modulation      : QPSK (M=4, 2 bits/symbol)
-  Total bits      : 100,000
-  Channel         : AWGN
-  Bandwidth       : 4000 Hz
-  BER @ 10 dB     : 0.00001 (sim) | 0.00000 (theory)
-  Capacity @ 10dB : 13.84 kbps
-  Plot saved      : results/ber_plot.png
-====================================================
-```
 
 ---
 
